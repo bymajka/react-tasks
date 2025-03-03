@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+:root{
+    --drop-shadow-md: #23170a;
+}
