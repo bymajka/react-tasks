@@ -1,5 +1,6 @@
 import { useState } from "react";
 import TaskLabelInput from "./TaskLabelInput";
+import TaskCheckbox from "./TaskCheckbox";
 
 const TaskForm = (props: {setTasks: React.Dispatch<React.SetStateAction<{
     title: string;
@@ -44,11 +45,8 @@ const TaskForm = (props: {setTasks: React.Dispatch<React.SetStateAction<{
             <TaskLabelInput htmlFor="input-title" labelText="Title" onChangeEvent={handleTitleChange} value={task.title} />
             <TaskLabelInput htmlFor="input-description" labelText="Description" onChangeEvent={handleDescriptionChange} value={task.description} />
             <div className="flex flex-col">
-                <div className="flex flex-row gap-2 items-center">
-                    <label htmlFor="input-completed" className="text-amber-400 [text-shadow:_0_2px_0_rgb(0_0_0_/_40%)] text-2xl">Completed</label>
-                    <input id="input-completed" checked={task.isCompleted} className="mt-2 w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 outline-0 accent-amber-400" type="checkbox" onChange={handleCompletedChange}/>
-                </div>
-                <button type="submit" className="border-2 rounded-md mt-5 border-amber-100 bg-amber-200 text-purple-700">Submit</button>
+                <TaskCheckbox htmlFor="input-completed" labelText="Completed" checked={task.isCompleted} onChangeEvent={handleCompletedChange} />
+                <button type="submit" className="border-2 rounded-md mt-5 border-amber-100 bg-amber-200 text-purple-700 hover:bg-amber-300 hover:border-amber-700">Submit</button>
             </div>
         </form>
     )
