@@ -8,8 +8,6 @@ const Task = (props: {title: string; description: string; isCompleted: boolean})
         setCompleated(compleatedState => !compleatedState);
     }
 
-
-
     return(
     <>
         <div className={`flex flex-row items-center gap-1 bg-purple-400 min-w-96 rounded-md justify-between m-4 p-4 border-0 border-b-4 border-l-2 border-r-2 ${completedState ? 'border-green-500' : 'border-red-700'}`}>
