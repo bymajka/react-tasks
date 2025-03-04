@@ -8,12 +8,10 @@ const App = () => {
   const [tasks, setTasks] = useState(TASKS);
 
   return (
-  <>
     <div className="flex flex-row flex-1/2 justify-center bg-neutral-200 gap-4">
       <TaskForm tasks={tasks} setTasks={setTasks} />
       <TaskList tasks={tasks} />
     </div>
-  </>
   )
 }
 
