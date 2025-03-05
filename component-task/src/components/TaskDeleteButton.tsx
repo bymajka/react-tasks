@@ -3,7 +3,6 @@ import {useContext} from 'react';
 import { TasksContext } from "../App";
 
 const TaskDeleteButton = (props: {index: symbol}) => {
-
     const tasksContext = useContext(TasksContext);
 
     return (
