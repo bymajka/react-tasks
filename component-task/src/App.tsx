@@ -25,7 +25,7 @@ const App = () => {
   }
 
   return (
-    <div className="flex flex-row flex-1/2 justify-center bg-neutral-200 gap-4">
+    <div className="flex flex-col justify-center bg-neutral-200 gap-4">
       <TaskForm tasks={tasks} setTasks={setTasks} />
       <TasksContext.Provider value={{removeContext:handleRemoving, changecategory:handleChangeCategory}}>
       <TaskList tasks={tasks} onToggleCompletion={handleTogglecompletion}/>

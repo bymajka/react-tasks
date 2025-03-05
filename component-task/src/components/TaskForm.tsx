@@ -2,48 +2,45 @@ import { useState } from "react";
 import TaskLabelInput from "./TaskLabelInput";
 import TaskCheckbox from "./TaskCheckbox";
 
-const TaskForm = (props: {setTasks: React.Dispatch<React.SetStateAction<{
+interface Task {
     id: symbol;
     title: string;
     description: string;
     isCompleted: boolean;
-}[]>>, tasks: {title: string, description: string, isCompleted: boolean}[]}) => {   
-    const [task, setTask] = useState({
+}
+interface TaskFormProps {
+    setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
+}
+
+const TaskForm = ({setTasks} : TaskFormProps) => {   
+    const [task, setTask] = useState<Task>({
         id: Symbol(),
         title: '',
         description: '',
         isCompleted: false
     });
-    const handleTitleChange = (e) => {
+    const handleChange = (key: keyof Task) => (e: React.ChangeEvent<HTMLInputElement>) => {
         setTask({
             ...task,
-            title: e.target.value
+            [key]: key === 'isCompleted' ? e.target.checked : e.target.value
         });
     }
-    const handleDescriptionChange = (e) => {
-        setTask({
-            ...task,
-            description: e.target.value
-        })
-    }
-    const handleCompletedChange = (e) => {
-        setTask({
-            ...task,
-            isCompleted: (e.target.checked)
-        })
-    }
+    const handleTitleChange = handleChange('title');
+    const handleDescriptionChange = handleChange('description');
+    const handleCompletedChange = handleChange('isCompleted');
+
     const createTask = (e: React.FormEvent) => {
         e.preventDefault();
         if(!task.title.trim()){
             alert("Enter Task title please")
             return;
         }
-        props.setTasks(prevTasks => [...prevTasks, task])
+        setTasks(prevTasks => [...prevTasks, task])
         setTask({id: Symbol(task.title), title: '', description: '', isCompleted: false});
     }
 
     return(
-        <form action='post' onSubmit={createTask} className="w-2xl h-30 self-center p-4 rounded-2xl bg-purple-400 flex flex-row justify-between border-b-2 border-b-amber-600">
+        <form action='post' onSubmit={createTask} className="w-2xl h-30 self-center p-4 rounded-2xl bg-purple-400 flex flex-row justify-between border-b-2 border-b-amber-600 mt-10">
             <TaskLabelInput htmlFor="input-title" labelText="Title" onChangeEvent={handleTitleChange} value={task.title} />
             <TaskLabelInput htmlFor="input-description" labelText="Description" onChangeEvent={handleDescriptionChange} value={task.description} />
             <div className="flex flex-col">
