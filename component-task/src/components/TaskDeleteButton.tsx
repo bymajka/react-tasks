@@ -4,10 +4,10 @@ import { TasksContext } from "../App";
 
 const TaskDeleteButton = (props: {index: symbol}) => {
 
-    const handleRemoving = useContext(TasksContext);
+    const tasksContext = useContext(TasksContext);
 
     return (
-        <button onClick={() => {handleRemoving(props.index)}}><img src={trashBinImage} alt="Delete" className="cursor-pointer hover:invert"/></button>
+        <button onClick={() => {tasksContext.removeContext(props.index)}}><img src={trashBinImage} alt="Delete" className="cursor-pointer hover:invert"/></button>
     )
 }
 
