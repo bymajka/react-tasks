@@ -3,11 +3,13 @@ import TaskLabelInput from "./TaskLabelInput";
 import TaskCheckbox from "./TaskCheckbox";
 
 const TaskForm = (props: {setTasks: React.Dispatch<React.SetStateAction<{
+    id: symbol;
     title: string;
     description: string;
     isCompleted: boolean;
 }[]>>, tasks: {title: string, description: string, isCompleted: boolean}[]}) => {   
     const [task, setTask] = useState({
+        id: Symbol(),
         title: '',
         description: '',
         isCompleted: false
@@ -37,7 +39,7 @@ const TaskForm = (props: {setTasks: React.Dispatch<React.SetStateAction<{
             return;
         }
         props.setTasks(prevTasks => [...prevTasks, task])
-        setTask({title: '', description: '', isCompleted: false});
+        setTask({id: Symbol(task.title), title: '', description: '', isCompleted: false});
     }
 
     return(
