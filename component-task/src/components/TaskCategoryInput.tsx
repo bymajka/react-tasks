@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { TasksContext } from "../App";
 import { categories } from "../constants/categories";
 
-const TaskCategoryInput = (props: {id: symbol, categorie: string}) =>{
+const TaskCategoryInput = (props: {id: symbol, categorie: string, onChangeEvent: (e: React.ChangeEvent<HTMLSelectElement>) => void}) =>{
     const [selectedCategory, setSelectedCategory] = useState(props.categorie);
     const tasksContext = useContext(TasksContext);
 
@@ -10,9 +10,10 @@ const TaskCategoryInput = (props: {id: symbol, categorie: string}) =>{
         const newCategory = e.target.value;
         setSelectedCategory(newCategory);
         tasksContext.changecategory(props.id, newCategory);
+        props.onChangeEvent(e);
     };
     return(
-        <form action="" className="flex flex-col gap-4">
+        <form action="" className="flex flex-col gap-5">
             <label htmlFor={`category${props.id.toString()}`} className="text-amber-400 [text-shadow:_0_2px_0_rgb(0_0_0_/_40%)] text-2xl">Category</label>
             <select name="category" id={`category${props.id.toString()}`} value={selectedCategory} className="border-2 rounded-md border-amber-100 bg-amber-200" onChange={handleCategoryChange}>
                 {categories.map((category, index) => {
