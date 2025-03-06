@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+@theme {
+    --font-sans: Lato;
+    --font-serif: BreeSerif;
+}
+
 :root{
     --drop-shadow-md: #23170a;
+}
+
+@font-face {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 400;
+    src: url(./assets/fonts/Lato-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: BreeSerif;
+    font-style: normal;
+    font-weight: 400;
+    src: url(./assets/fonts/BreeSerif-Regular.ttf) format('truetype');
 }
