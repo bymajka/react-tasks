@@ -1,6 +1,13 @@
 import { ChangeEventHandler} from "react";
 
-const TaskLabelInput = (props: {htmlFor: string, labelText: string, onChangeEvent: ChangeEventHandler<HTMLInputElement>, value: string}) => {
+interface TaskLabelProps {
+    htmlFor: string;
+    labelText: string;
+    onChangeEvent: ChangeEventHandler<HTMLInputElement>;
+    value: string
+}
+
+const TaskLabelInput = (props: TaskLabelProps) => {
     return(
     <div className="flex flex-col">
                 <label htmlFor={props.htmlFor} className="text-amber-400 [text-shadow:_0_2px_0_rgb(0_0_0_/_40%)] text-2xl">{props.labelText}</label>

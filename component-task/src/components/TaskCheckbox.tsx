@@ -1,6 +1,12 @@
 import { ChangeEventHandler } from "react";
 
-const TaskCheckbox = (props: {htmlFor: string, labelText: string, checked: boolean, onChangeEvent: ChangeEventHandler<HTMLInputElement>}) => {
+interface TaskCheckboxProps {
+    htmlFor: string;
+    labelText: string;
+    checked: boolean;
+    onChangeEvent: ChangeEventHandler<HTMLInputElement>;
+}
+const TaskCheckbox = (props: TaskCheckboxProps) => {
     return (
         <div className="flex flex-row gap-2 items-center">
             <label htmlFor={props.htmlFor} className="text-amber-400 [text-shadow:_0_2px_0_rgb(0_0_0_/_40%)] text-2xl">{props.labelText}</label>
