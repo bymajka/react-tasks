@@ -3,6 +3,7 @@ import { TASKS } from "./constants/tasks";
 import TaskList from "./components/TaskList"
 import TaskForm from "./components/TaskForm"
 import Header from "./components/header/Header";
+import { categories } from "./constants/categories";
 
 export const SearchbarContext = createContext({query: '', setQuery: (val:string) => {}});
 export const TasksContext = createContext({removeContext:(val:symbol) => {}, changecategory:(val:symbol, value:string) => {}});
@@ -27,7 +28,10 @@ const App = () => {
     const { id, isCompleted, ...rest } = task;
     return Object.values(rest).map(value => value.toString().toLowerCase()).join('').includes(query.toLowerCase());
   })
+  
 
+  const taskListsByCategory = categories.map(category => (<TaskList key={category.id} tasks={filteredItems.filter(task => task.category === category.name)} onToggleCompletion={handleTogglecompletion} categoryName={category.name + category.emoji} />));
+  
   return (
     <>
     <SearchbarContext.Provider value={{query, setQuery}}>
@@ -36,7 +40,10 @@ const App = () => {
     <div className="flex flex-col bg-neutral-200 gap-4 min-h-dvh">
       <TaskForm tasks={tasks} setTasks={setTasks} />
       <TasksContext.Provider value={{removeContext:handleRemoving, changecategory:handleChangeCategory}}>
-      <TaskList tasks={filteredItems} onToggleCompletion={handleTogglecompletion}/>
+      <div className="flex flex-row gap-2 overflow-scroll overflow-y-hidden px-6">
+        <TaskList tasks={filteredItems} onToggleCompletion={handleTogglecompletion} categoryName="All Tasks"/>
+        {taskListsByCategory}
+      </div>
       </TasksContext.Provider>
     </div>
     </>
