@@ -1,5 +1,5 @@
 export const categories = [
-    {id: 1, name: 'Work'},
-    {id: 2, name: 'Education'},
-    {id: 3, name: 'Personal'}
+    {id: 1, name: 'Work', emoji: '💼'},
+    {id: 2, name: 'Education', emoji: '🎓'},
+    {id: 3, name: 'Personal', emoji: '🏄‍♂️'},
 ]
