@@ -1,24 +1,89 @@
 @import "tailwindcss";
 
 @theme {
-    --font-sans: Lato;
-    --font-serif: BreeSerif;
+  --font-sans: Lato;
+  --font-serif: BreeSerif;
+  --font-inter-regular: Inter;
+  --font-inter-black: Inter-Black;
+  --font-inter-medium: Inter-Medium;
+  --font-inter-semibold: Inter-Semibold;
+
+  --spacing-60px: 60px;
+  --spacing-40px: 40px;
+
+  --color-searchbar-border: #edefff;
+  --color-placeholder: #cacde1;
+  --color-black-override: #282828;
+  --color-dodger-blue: #5e6bff;
+  --color-complete-bg-orange: #e28c1c;
+  --color-complete-bg-green: #1ce282;
+  --color-complete-orange: #ef8400;
+  --color-complete-green: #0eb363;
+  --color-addtask-button: #5967ff;
+
+  --radius-20px: 20px;
 }
 
-:root{
-    --drop-shadow-md: #23170a;
+:root {
+  --drop-shadow-md: #23170a;
+}
+
+.category-select {
+  background-image: url("./assets/icons/arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: right 12px bottom 50%;
+}
+
+select {
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Safari, Chrome, Opera */
+  -webkit-appearance: none;
+}
+
+/* for IE10 */
+select::-ms-expand {
+  display: none;
 }
 
 @font-face {
-    font-family: Lato;
-    font-style: normal;
-    font-weight: 400;
-    src: url(./assets/fonts/Lato-Regular.ttf) format('truetype');
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/fonts/Lato-Regular.ttf) format("truetype");
 }
 
 @font-face {
-    font-family: BreeSerif;
-    font-style: normal;
-    font-weight: 400;
-    src: url(./assets/fonts/BreeSerif-Regular.ttf) format('truetype');
+  font-family: BreeSerif;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/fonts/BreeSerif-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: Inter;
+  src: url(./assets/fonts/Inter_18pt-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Inter-Black;
+  src: url(./assets/fonts/Inter_18pt-Black.ttf) format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Inter-Medium;
+  src: url(./assets/fonts/Inter_18pt-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Inter-Semibold;
+  src: url(./assets/fonts/Inter_18pt-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
 }

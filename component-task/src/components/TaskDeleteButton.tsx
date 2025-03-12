@@ -1,4 +1,4 @@
-import trashBinImage from "../assets/delete-icon.svg";
+import trashBinImage from "../assets/icons/delete.svg";
 import { useContext } from "react";
 import { TasksContext } from "../App";
 
@@ -10,11 +10,12 @@ const TaskDeleteButton = (props: { index: symbol }) => {
       onClick={() => {
         tasksContext.removeContext(props.index);
       }}
+      className="absolute right-4 bottom-5"
     >
       <img
         src={trashBinImage}
         alt="Delete"
-        className="cursor-pointer hover:invert"
+        className="cursor-pointer hover:drop-shadow-sm"
       />
     </button>
   );
