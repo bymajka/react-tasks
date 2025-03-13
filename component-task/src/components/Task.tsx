@@ -24,7 +24,7 @@ const Task = ({
     <div className="flex flex-col relative items-start gap-2 bg-white w-full justify-between p-4 border-1 border-dodger-blue/10 rounded-xl">
       <h1 className="text-black-override text-sm font-inter-black">{title}</h1>
       <p
-        className="text-black-override text-sm font-inter-regular overflow-auto max-w-72 
+        className="text-black-override text-sm font-inter-regular overflow-auto max-w-2/3 
           [&::-webkit-scrollbar]:h-2
        [&::-webkit-scrollbar-track]:mt-18
        [&::-webkit-scrollbar-track]:mb-4

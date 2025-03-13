@@ -4,6 +4,7 @@ import TaskList from "./components/TaskList";
 import Header from "./components/header/Header";
 import { categories } from "./constants/categories";
 import OpenFormButton from "./components/OpenFormButton";
+import TaskForm from "./components/TaskForm";
 
 export const SearchbarContext = createContext({
   query: "",
@@ -17,6 +18,7 @@ export const TasksContext = createContext({
 const App = () => {
   const [tasks, setTasks] = useState(TASKS);
   const [query, setQuery] = useState("");
+  const [showModal, setShowModal] = useState(false);
   const handleTogglecompletion = (taskIndex: symbol) => {
     setTasks((tasks) =>
       tasks.map((task) =>
@@ -62,8 +64,8 @@ const App = () => {
         <Header />
       </SearchbarContext.Provider>
       <div className="flex flex-col bg-linear-150 from-dodger-blue/50 to-white gap-4 min-h-dvh pt-8 px-40px">
-        {/* <TaskForm tasks={tasks} setTasks={setTasks} /> */}
-        <OpenFormButton />
+        <OpenFormButton showModal={setShowModal} />
+        {showModal && <TaskForm setTasks={setTasks} showModal={setShowModal} />}
         <TasksContext.Provider
           value={{
             removeContext: handleRemoving,

@@ -14,13 +14,16 @@
   --color-searchbar-border: #edefff;
   --color-placeholder: #cacde1;
   --color-black-override: #282828;
+  --color-black-light: #38363e;
   --color-dodger-blue: #5e6bff;
   --color-complete-bg-orange: #e28c1c;
   --color-complete-bg-green: #1ce282;
   --color-complete-orange: #ef8400;
   --color-complete-green: #0eb363;
   --color-addtask-button: #5967ff;
+  --color-grey-light: #cecece;
 
+  --radius-10px: 10px;
   --radius-20px: 20px;
 }
 

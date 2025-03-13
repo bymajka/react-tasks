@@ -17,12 +17,6 @@ const TaskCategoryInput = (props: {
 
   return (
     <form action="" className="flex flex-col gap-5">
-      {/* <label
-        htmlFor={`category${props.id.toString()}`}
-        className="text-amber-400 [text-shadow:_0_2px_0_rgb(0_0_0_/_40%)] text-2xl"
-      >
-        Category
-      </label> */}
       <select
         name="category"
         id={`category${props.id.toString()}`}

@@ -11,20 +11,18 @@ const TaskLabelInput = ({
   ...rest
 }: TaskLabelProps) => {
   return (
-    <div className="flex flex-col">
-      <label
-        htmlFor={htmlFor}
-        className="text-amber-400 [text-shadow:_0_2px_0_rgb(0_0_0_/_40%)] text-2xl"
-      >
+    <div className="flex flex-col gap-2.5">
+      <label htmlFor={htmlFor} className="font-inter-medium text-black-light">
         {labelText}
       </label>
       <input
         id={htmlFor}
         {...rest}
         type="text"
-        className="border-2 rounded-md mt-5 border-amber-100 bg-amber-200 text-purple-700 pl-2 outline-amber-800"
+        placeholder="Type here"
+        className="border-2 rounded-10px w-[528px] min-h-14 border-searchbar-border p-4 bg-white outline-addtask-button caret-addtask-button placeholder:text-placeholder font-inter-regular text-black-override"
       />
-      <p className="text-red-600 [text-shadow:_1px_1px_1px_rgb(252_39_245_/_70%)] text-lg pt-2">
+      <p className="text-red-600 [text-shadow:_1px_1px_1px_rgb(252_39_245_/_70%)] text-lg">
         {error}
       </p>
     </div>
