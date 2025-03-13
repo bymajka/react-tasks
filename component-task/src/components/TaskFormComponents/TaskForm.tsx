@@ -1,12 +1,13 @@
 import { Controller, Resolver, SubmitHandler, useForm } from "react-hook-form";
 import { useRef } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
 import TaskLabelInput from "./TaskLabelInput";
 import TaskRadio from "./TaskRadio";
 import TaskFormCategoryInput from "./TaskFormCategoryInput";
-import * as yup from "yup";
 
-import plusImage from "../assets/icons/plus-icon.svg";
+import plusImage from "../../assets/icons/plus-icon.svg";
 
 interface Task {
   id: symbol;
@@ -69,6 +70,7 @@ const TaskForm = ({ setTasks, showModal }: TaskFormProps) => {
       category: data.category?.value || "",
       description: data.description,
       isCompleted: data.isCompleted,
+      isDeleted: false,
     };
     setTasks((prevTasks) => [...prevTasks, task]);
     showModal(false);

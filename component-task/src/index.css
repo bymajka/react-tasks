@@ -1,8 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: Lato;
-  --font-serif: BreeSerif;
   --font-inter-regular: Inter;
   --font-inter-black: Inter-Black;
   --font-inter-medium: Inter-Medium;
@@ -22,6 +20,7 @@
   --color-complete-green: #0eb363;
   --color-addtask-button: #5967ff;
   --color-grey-light: #cecece;
+  --color-error: #f11b26;
 
   --radius-10px: 10px;
   --radius-20px: 20px;
@@ -47,20 +46,6 @@ select {
 /* for IE10 */
 select::-ms-expand {
   display: none;
-}
-
-@font-face {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: 400;
-  src: url(./assets/fonts/Lato-Regular.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: BreeSerif;
-  font-style: normal;
-  font-weight: 400;
-  src: url(./assets/fonts/BreeSerif-Regular.ttf) format("truetype");
 }
 
 @font-face {

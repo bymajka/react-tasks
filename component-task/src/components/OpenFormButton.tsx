@@ -1,5 +1,6 @@
-import plusIcon from "../assets/icons/plus-icon.svg";
 import React from "react";
+
+import plusIcon from "../assets/icons/plus-icon.svg";
 
 interface OpenFormButtonProps {
   showModal: React.Dispatch<React.SetStateAction<boolean>>;

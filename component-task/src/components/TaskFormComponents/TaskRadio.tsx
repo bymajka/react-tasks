@@ -38,11 +38,7 @@ const TaskRadio = ({
           </label>
         </div>
       </fieldset>
-      {error && (
-        <p className="text-red-600 [text-shadow:_1px_1px_1px_rgb(252_39_245_/_70%)] text-lg">
-          {error}
-        </p>
-      )}
+      {error && <p className="text-error text-lg">{error}</p>}
     </div>
   );
 };

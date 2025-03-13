@@ -22,9 +22,7 @@ const TaskLabelInput = ({
         placeholder="Type here"
         className="border-2 rounded-10px w-[528px] min-h-14 border-searchbar-border p-4 bg-white outline-addtask-button caret-addtask-button placeholder:text-placeholder font-inter-regular text-black-override"
       />
-      <p className="text-red-600 [text-shadow:_1px_1px_1px_rgb(252_39_245_/_70%)] text-lg">
-        {error}
-      </p>
+      {error && <p className="text-error text-lg">{error}</p>}
     </div>
   );
 };

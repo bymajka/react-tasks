@@ -1,17 +1,17 @@
 import { useContext } from "react";
-import { TasksContext } from "../App";
-import { categories } from "../constants/categories";
+import { AppContext } from "../../App";
+import { categories } from "../../constants/categories";
 
 const TaskCategoryInput = (props: {
   id: symbol;
   categorie: string;
   onChangeEvent?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }) => {
-  const tasksContext = useContext(TasksContext);
+  const appContext = useContext(AppContext);
 
   const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newCategory = e.target.value;
-    tasksContext.changecategory(props.id, newCategory);
+    appContext.changecategory(props.id, newCategory);
     props.onChangeEvent?.(e);
   };
 
