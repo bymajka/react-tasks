@@ -19,9 +19,11 @@ jobs:
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
+        working-directory: ./component-task
 
       - name: Build project
         run: npm run build
+        working-directory: ./component-task
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
