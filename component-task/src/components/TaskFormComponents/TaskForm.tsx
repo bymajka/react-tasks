@@ -72,7 +72,7 @@ const TaskForm = ({ setTasks, showModal }: TaskFormProps) => {
       isCompleted: data.isCompleted,
       isDeleted: false,
     };
-    setTasks((prevTasks) => [...prevTasks, task]);
+    setTasks((prevTasks) => [task, ...prevTasks]);
     showModal(false);
   };
 
@@ -121,7 +121,7 @@ const TaskForm = ({ setTasks, showModal }: TaskFormProps) => {
             type="submit"
             className={`rounded-xl ${
               isValid ? "bg-addtask-button" : "bg-grey-light"
-            } flex flex-row items-center justify-center text-white py-4 mt-4`}
+            } flex flex-row items-center justify-center cursor-pointer text-white py-4 mt-4`}
           >
             <img src={plusImage} alt="plus" />
             ADD TASK
