@@ -19,7 +19,7 @@ const TaskCategoryInput = (props: {
     <form action="" className="flex flex-col gap-5">
       <select
         name="category"
-        id={`category${props.id.toString()}`}
+        id={`category${props.id?.toString() ?? ""}`}
         value={props.categorie}
         className="category-select border-2 w-32 rounded-lg bg-[#f1f1f1] py-1 px-2 font-inter-medium text-sm text-black-override border-none"
         onChange={handleCategoryChange}
