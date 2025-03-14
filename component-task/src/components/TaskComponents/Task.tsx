@@ -1,7 +1,8 @@
 import TaskCategoryInput from "./TaskCategoryInput";
 import TaskDeleteButton from "./TaskDeleteButton";
-import incompleteIcon from "../assets/icons/incomplete-icon.svg";
-import completeIcon from "../assets/icons/complete-icon.svg";
+
+import incompleteIcon from "../../assets/icons/incomplete-icon.svg";
+import completeIcon from "../../assets/icons/complete-icon.svg";
 
 interface TaskProps {
   id: symbol;
