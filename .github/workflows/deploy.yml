@@ -20,17 +20,17 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
         with: 
-            working-directory: $(build.sourcesdirectory)/component-task
+            working-directory: ./react-tasks/component-task
 
       - name: Build project
         run: npm run build
-        working-directory: $(build.sourcesdirectory)/component-task
+        working-directory: ./react-tasks/component-task
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
         with:
           name: production-files
-          path: $(build.sourcesdirectory)/component-task/dist
+          path: ./react-tasks/component-task/dist
 
   deploy:
     name: Deploy
