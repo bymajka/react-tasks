@@ -9,6 +9,7 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    working-directory: component-task
 
     steps:
       - name: Checkout repo
@@ -19,11 +20,9 @@ jobs:
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
-        working-directory: ./component-task
 
       - name: Build project
         run: npm run build
-        working-directory: ./component-task
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
