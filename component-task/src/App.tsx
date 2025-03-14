@@ -7,11 +7,16 @@ import Header from "./components/header/Header";
 import OpenFormButton from "./components/OpenFormButton";
 import TaskForm from "./components/TaskFormComponents/TaskForm";
 
-export const AppContext = createContext({
+export const AppContext = createContext<{
+  query: string;
+  setQuery: (val: string) => void;
+  removeContext: (val: symbol) => void;
+  changecategory: (taskIndex: symbol, value: string) => void;
+}>({
   query: "",
-  setQuery: (val: string) => {},
-  removeContext: (val: symbol) => {},
-  changecategory: (val: symbol, value: string) => {},
+  setQuery: () => {},
+  removeContext: () => {},
+  changecategory: () => {},
 });
 
 const App = () => {

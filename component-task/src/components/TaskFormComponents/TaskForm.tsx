@@ -53,7 +53,6 @@ const TaskForm = ({ setTasks, showModal }: TaskFormProps) => {
     handleSubmit,
     control,
     formState: { errors, isValid },
-    reset,
   } = useForm<IFormInput>({
     resolver: yupResolver(schema) as Resolver<IFormInput>,
   });
